@@ -1,13 +1,12 @@
-{% load static %}
-
-<link rel="stylesheet" href="{% static 'polls/style.css' %}">
-
-{% if latest_question_list %}
-    <ul>
-    {% for question in latest_question_list %}
-        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No polls are available.</p>
-{% endif %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mango - DjangoMango</title>
+</head>
+<body>
+    <h1>Olá!</h1>
+    <p>Seja bem vindo ao site <strong>DjangoMango</strong>! Para começar, clique no <strong>Mango</strong>!</p>
+</body>
+</html>
