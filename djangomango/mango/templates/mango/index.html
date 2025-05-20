@@ -10,9 +10,18 @@
 </head>
 <body>
     <div>
-        <h1>Olá!</h1>
-        <p>Seja bem vindo ao site <strong>DjangoMango</strong>! Para começar, clique no <strong>Mango</strong>!</p>
-        <img style="display: block; margin: auto;" src="{% static 'mango/manga.jpeg' %}" alt="Mango">
+        <div style="text-align: center;">
+            <h1>Olá!</h1>
+            <p>Seja bem vindo ao site <strong>DjangoMango</strong>! Para começar, clique no <strong>Mango</strong>!</p>
+            <a href="http://localhost:8000/mango/clicked"><img id="manga" src="{% static 'mango/manga.jpeg' %}" alt="Mango"></a>
+            <br>
+            <p id="cinza"><strong>Mango</strong> já foi clicado</p>
+            <h1 id="cinza">{{ cliques_manga }}</h1>
+            <p id="cinza">vezes</p>
+        </div>
+        <div style="text-align: right;">
+            <a href="http://localhost:8000/frango"><img id="frango" src="{% static 'mango/frango.jfif' %}" alt="Frango"></a>
+        </div>
     </div>
 </body>
 </html>
