@@ -4,16 +4,16 @@ levaremos o usuário para diferentes páginas html de acordo com testes lógicos
 """
 import json
 from django.shortcuts import render, redirect
-
-context = {
-    'cliques_manga': 0
-}
+from django.db.models import F
+from .models import AlimentoClicavel
 
 def index(request):
-    cliques_manga = request.session.get('cliques_manga', 0)
-    context = {'cliques_manga': cliques_manga}
+    manga = AlimentoClicavel.objects.get(id=1)
+    #cliques_manga = request.session.get('cliques_manga', 0)
+    context = {'cliques_manga': manga.cliques}
     return render(request, 'mango/index.html', context)
 
 def clicked(request):
-    request.session['cliques_manga'] = request.session.get('cliques_manga', 0) + 1
+    AlimentoClicavel.objects.filter(id=1).update(cliques=F('cliques') + 1)
+    #request.session['cliques_manga'] = request.session.get('cliques_manga', 0) + 1
     return redirect('index')
