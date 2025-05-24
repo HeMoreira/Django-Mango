@@ -8,12 +8,24 @@ h1 {
 p {
     font-size: 20px;
 }
-div {
-    text-align: center;
+aside {
+    position: relative; /* Fixa a posição da caixa na tela */
+    top: -550px; /* Distância do topo */
+    right: -1020px; /* Distância da lateral direita */
+    width: 250px; /* Largura da caixa */
+    padding: 15px; /* Espaçamento interno */
+    background-color: white; /* Cor de fundo */
+    border: 1px solid #ccc; /* Borda */
+    border-radius: 8px; /* Bordas arredondadas */
+    /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  Sombra */
 }
+/*div {
+    text-align: center;
+}*/
 #manga {
     width: 500px;
     height: auto;
+    text-align: center;
 }
 #frango {
     width: 60px;

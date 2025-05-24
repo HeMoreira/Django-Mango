@@ -9,19 +9,23 @@
     <title>Mango - DjangoMango</title>
 </head>
 <body>
-    <div>
-        <div style="text-align: center;">
-            <h1>Olá!</h1>
-            <p>Seja bem vindo ao site <strong>DjangoMango</strong>! Para começar, clique no <strong>Mango</strong>!</p>
-            <a href="http://localhost:8000/mango/clicked"><img id="manga" src="{% static 'mango/manga.jpeg' %}" alt="Mango"></a>
-            <br>
-            <p id="cinza"><strong>Mango</strong> já foi clicado</p>
-            <h1 id="cinza">{{ cliques_manga }}</h1>
-            <p id="cinza">vezes</p>
-        </div>
-        <div style="text-align: right;">
-            <a href="http://localhost:8000/frango"><img id="frango" src="{% static 'mango/frango.jfif' %}" alt="Frango"></a>
-        </div>
-    </div>
+    <main>
+        <section style="text-align: center;">
+            <section>
+                <h1>Olá!</h1>
+                <p>Seja bem vindo ao site <strong>DjangoMango</strong>! Para começar, clique no <strong>Mango</strong>!</p>
+                <a href="http://localhost:8000/mango/clicked"><img id="manga" src="{% static 'mango/manga.jpeg' %}" alt="Mango"></a>
+            </section>
+            <section>
+                <br>
+                <p id="cinza"><strong>Mango</strong> já foi clicado</p>
+                <h1 id="cinza">{{ cliques_manga }}</h1>
+                <p id="cinza">vezes</p>
+            </section>
+            <aside>
+                <p id="cinza">Cliques de Hoje <br> <big><strong>{{ cliques_de_hoje_manga }}</strong></big> <br><br> Cliques do dia mais clicado <br> ({{ dia_mais_clicado_manga }}) <br> <big><strong>{{ cliques_do_dia_mais_clicado_manga }}</strong></big> <br><br> Consegue Fazer Melhor?</p>
+            </aside>
+        </section>
+    </main>
 </body>
 </html>

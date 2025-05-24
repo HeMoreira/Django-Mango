@@ -6,17 +6,19 @@ from django.contrib import admin
 
 class AlimentoClicavel(models.Model):
     nome = models.CharField()
-    cliques = models.IntegerField()
-    dia_mais_clicado = models.DateField()
+    cliques = models.IntegerField(default=0)
+    cliques_de_hoje = models.IntegerField(default=0)
+    cliques_do_dia_mais_clicado = models.IntegerField(default=0)
+    dia_mais_clicado = models.DateField(default=timezone.now())
     def __str__(self):
         return self.nome
+
+class DiaAtual(models.Model):
+    dia_ultima_requisicao = models.DateField(default=timezone.now())
     """
     @admin.display(
         boolean=True,
         ordering="pub_date",
         description="Published recently?",
     )
-    def was_published_recently(self):
-        now = timezone.now()
-        return now - datetime.timedelta(days=1) <= self.pub_date <= now
     """
